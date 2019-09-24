@@ -17,6 +17,11 @@
 cc_defaults {
     name: "libartbase_defaults",
     defaults: ["art_defaults"],
+    product_variables: {
+        has_memfd_backport: {
+            cflags: ["-DHAS_MEMFD_BACKPORT"],
+        },
+    },
     host_supported: true,
     srcs: [
         "arch/instruction_set.cc",
